@@ -1,7 +1,6 @@
 {
   "name": "my-heroku-site",
   "version": "1.0.0",
-  "description": "Simple website served by Node on Heroku",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
